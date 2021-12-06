@@ -16,8 +16,8 @@ unzip termux-monitor.zip
 mv termux-monitor-main/* ./
 rm -rf termux-monitor-main termux-monitor.zip
 mkdir -p ~/.termux/boot/
-ln -s start-monitor.sh ~/.termux/boot/start-monitor.sh
-chmod +x monitor.sh start-monitor.sh telegram.sh
+ln -s boot-monitor.sh ~/.termux/boot/boot-monitor.sh
+chmod +x monitor.sh boot-monitor.sh telegram.sh
 #
 #
 echo Edite primeiro o arquivo 
@@ -25,5 +25,5 @@ echo nano ~/bin/monitor.sh
 echo Depois o arquivo:
 echo nano ~/bin/telegram.sh
 echo Inicie o servico reiniciando o box ou com o comando
-echo ~/bin/start-monitor.sh &
+echo ~/bin/start-monitor.sh\ \&
 echo "################"
