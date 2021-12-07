@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/data/data/com.termux/files/usr/bin/sh
 
 # Script simples para iniciar os serviços.
 # espera que além do termux, seja instalado o termux:boot e este escript esteja na pasta:
