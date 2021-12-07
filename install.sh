@@ -17,8 +17,9 @@ wget https://codeload.github.com/eschuch/termux-monitor/zip/refs/heads/main -O t
 unzip termux-monitor.zip
 mv termux-monitor-main/* ./
 
-ln -s ~/bin/boot-monitor.sh ~/.termux/boot/boot-monitor.sh
 chmod +x ~/bin/monitor.sh ~/bin/boot-monitor.sh ~/bin/telegram.sh
+cp ~/bin/boot-monitor.sh ~/.termux/boot/boot-monitor.sh
+
 
 rm -rf termux-monitor-main termux-monitor.zip
 
