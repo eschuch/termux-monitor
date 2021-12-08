@@ -1,12 +1,7 @@
 #!/data/data/com.termux/files/usr/bin/sh
 
-#Abra o bootfather do telegram e configura um bot_tokem e um group_ip e adicione abaixo:
-GROUP_ID=group_id
-BOT_TOKEN=bot_token
+source ~/config.sh
 
-
-### Talves nao algterer abaixo
-# this 3 checks (if) are not necessary but should be convenient
 # Original de:
 # https://hackernoon.com/how-to-create-a-simple-bash-shell-script-to-send-messages-on-telegram-lcz31bx
 
