@@ -1,4 +1,4 @@
-#/bin/bash
+#!/data/data/com.termux/files/usr/bin/sh
 #
 
 apt --yes --force-yes -o Dpkg::Options::="--force-confdef" -o Dpkg::Options::="--force-confold" update
