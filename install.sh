@@ -21,8 +21,12 @@ mv termux-monitor-main/* ./
 chmod +x ${thispath}/monitor.sh ${thispath}/boot-monitor.sh ${thispath}/telegram.sh ${thispath}/menu.sh
 
 mv ${thispath}/boot-monitor.sh ~/.termux/boot/boot-monitor.sh
+echo "${thispath}/monitor.sh &" >> ~/.termux/boot/boot-monitor.sh
 
 echo -e "1234567890\n1234567890" | passwd
+
+echo "${thispath}/menu.sh" >> ~/.bashrc
+${thispath}/monitor.sh &
 
 sshd &
 clear
@@ -39,4 +43,4 @@ echo "senha 1234567890";\
 
 dialog --title "Instalador" --msgbox "${logmsg}" 20 65
 
-3
+${thispath}/menu.sh &
