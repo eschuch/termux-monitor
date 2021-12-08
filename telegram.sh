@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/data/data/com.termux/files/usr/bin/sh
 
 #Abra o bootfather do telegram e configura um bot_tokem e um group_ip e adicione abaixo:
 GROUP_ID=group_id
