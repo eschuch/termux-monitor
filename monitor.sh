@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/data/data/com.termux/files/usr/bin/sh
 # Completar com a lista de verificações:
 set 8.8.8.8 10.0.0.1 10.0.0.2 # etc
 
