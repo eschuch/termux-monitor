@@ -5,7 +5,11 @@
 # Para executar, execute a linha abaixo num shell termux:
 # wget https://raw.githubusercontent.com/eschuch/termux-monitor/main/install.sh -O - | bash
 # 
-pkg install wget -y
+apt --yes --force-yes -o Dpkg::Options::="--force-confdef" -o Dpkg::Options::="--force-confold" update
+apt --yes --force-yes -o Dpkg::Options::="--force-confdef" -o Dpkg::Options::="--force-confold" upgrade
+pkg update -y
+pkg upgrade -y
+pkg install openssh -y
 pkg install curl -y
 pkg install unzip -y
 
@@ -25,10 +29,24 @@ rm -rf termux-monitor-main termux-monitor.zip
 
 #
 #
-echo Edite primeiro o arquivo 
-echo nano ~/bin/monitor.sh
-echo Depois o arquivo:
-echo nano ~/bin/telegram.sh
-echo Inicie o servico reiniciando o box ou com o comando
-echo ~/bin/start-monitor.sh\ \&
-echo "----------------------------------------------"
+
+sshd &
+clear
+echo -----------------------------------------------------------------------
+echo -e "1234567890\n1234567890" | passwd
+echo Acesse pelo PUTTY:
+echo com o ip `ifconfig | grep -Eo 'inet (addr:)?([0-9]*\.){3}[0-9]*' | grep -Eo '([0-9]*\.){3}[0-9]*' | grep -v '127.0.0.1'`
+echo porta 8022
+echo o usuário `whoami`
+echo senha 1234567890
+echo ""
+echo e altere os arquivos:
+echo nano bin/monitor.sh
+echo e o arquivo
+echo nano bin/telegram.sh
+echo ""
+echo Reinicie o serviço com o comando
+echo ""
+echo killall bash ; ./bin/boot-monitor.sh &
+echo "-----------------------------------------------------------------------"
+read m
