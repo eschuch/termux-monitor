@@ -1,5 +1,6 @@
 #!/data/data/com.termux/files/usr/bin/sh
 #
+thispath=`dirname ${0}`
 
 apt --yes --force-yes -o Dpkg::Options::="--force-confdef" -o Dpkg::Options::="--force-confold" update
 apt --yes --force-yes -o Dpkg::Options::="--force-confdef" -o Dpkg::Options::="--force-confold" upgrade
@@ -9,16 +10,17 @@ pkg install openssh -y
 pkg install curl -y
 pkg install unzip -y
 
-mkdir -p ~
+mkdir -p ${thispath}
 mkdir -p ~/.termux/boot/
 
-cd ~
+cd ${thispath}
 curl https://codeload.github.com/eschuch/termux-monitor/zip/refs/heads/main -o - > termux-monitor.zip
 unzip termux-monitor.zip
 mv termux-monitor-main/* ./
 
-chmod +x ~/monitor.sh ~/boot-monitor.sh ~/telegram.sh
-cp ~/boot-monitor.sh ~/.termux/boot/boot-monitor.sh
+chmod +x ${thispath}/monitor.sh ${thispath}/boot-monitor.sh ${thispath}/telegram.sh ${thispath}/menu.sh
+
+mv ${thispath}/boot-monitor.sh ~/.termux/boot/boot-monitor.sh
 
 echo -e "1234567890\n1234567890" | passwd
 
@@ -37,3 +39,4 @@ echo "senha 1234567890";\
 
 dialog --title "Instalador" --msgbox "${logmsg}" 20 65
 
+3
