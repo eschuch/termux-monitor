@@ -1,6 +1,8 @@
 #!/data/data/com.termux/files/usr/bin/sh
 
-source ~/config.sh
+thispath=`dirname ${0}`
+source ${thispath}/config.sh
+
 
 # Original de:
 # https://hackernoon.com/how-to-create-a-simple-bash-shell-script-to-send-messages-on-telegram-lcz31bx
